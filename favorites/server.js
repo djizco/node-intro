@@ -12,8 +12,7 @@ const server = http.createServer((request, response) => {
   // GET method returns the list of favorites
   if (request.method === 'GET') {
     // Your code here
-    let favorites = fs.readFileSync(pathname, 'utf-8');
-    favorites = JSON.parse(favorites);
+
     response.end(JSON.stringify({ message: 'Get successful', favorites }));
   }
 
@@ -25,10 +24,7 @@ const server = http.createServer((request, response) => {
       request.body = JSON.parse(body);
       // You now have access to request.body
       // Your code here
-      let favorites = fs.readFileSync(pathname, 'utf-8');
-      favorites = JSON.parse(favorites);
-      favorites.push(request.body);
-      fs.writeFileSync(pathname, JSON.stringify(favorites));
+
       response.end(JSON.stringify({ message: 'POST successful', favorites }));
     });
   }
@@ -36,10 +32,7 @@ const server = http.createServer((request, response) => {
   // DELETE method deletes the last favorite from the list of favorites
   if (request.method === 'DELETE') {
     // Your code here
-    let favorites = fs.readFileSync(pathname, 'utf-8');
-    favorites = JSON.parse(favorites);
-    const deleted = favorites.pop();
-    fs.writeFileSync(pathname, JSON.stringify(favorites));
+
     response.end(JSON.stringify({ message: 'Delete successful', favorites, deleted }));
   }
 
@@ -51,8 +44,7 @@ const server = http.createServer((request, response) => {
       request.body = JSON.parse(body);
       // You now have access to request.body
       // Your code here
-      const favorites = request.body;
-      fs.writeFileSync(pathname, JSON.stringify(favorites));
+
       response.end(JSON.stringify({ message: 'Update successful', favorites }));
     });
   }

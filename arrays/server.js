@@ -9,9 +9,7 @@ const port = process.env.PORT || 3000;
 const host = '127.0.0.1';
 
 const server = http.createServer((request, response) => {
-  response.writeHead(200, { 'Content-Type': 'application/json' });
-  const arrayString = fs.readFileSync(path.join(__dirname, 'array.json'), 'utf-8');
-  response.end(arrayString);
+  // Your code here
 });
 
 server.listen(port, host, () => console.log(`server is listening on port ${port}`));
