@@ -19,4 +19,6 @@ Exercise 5: hello/server.js
 Exercise 6: arrays/server.js
 * Try to complete this on your own.
 
-Exercise 7: favorites.json
+Extra Credit:
+
+Exercise 7: favorites/server.js
