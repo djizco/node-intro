@@ -5,12 +5,15 @@ const fs = require('fs');
 const http = require('http');
 const path = require('path');
 
+const pathname = path.join(__dirname, 'array.json');
+const encoding = 'utf-8';
+
 const port = process.env.PORT || 3000;
 const host = '127.0.0.1';
 
 const server = http.createServer((request, response) => {
   response.writeHead(200, { 'Content-Type': 'application/json' });
-  const arrayString = fs.readFileSync(path.join(__dirname, 'array.json'), 'utf-8');
+  const arrayString = fs.readFileSync(pathname, encoding);
   response.end(arrayString);
 });
 

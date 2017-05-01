@@ -2,7 +2,10 @@
 const fs = require('fs');
 const path = require('path');
 
-const arrayString = fs.readFileSync(path.join(__dirname, 'array.json'), 'utf-8');
+const pathname = path.join(__dirname, 'array.json');
+const encoding = 'utf-8';
+
+const arrayString = fs.readFileSync(pathname, encoding);
 const array = JSON.parse(arrayString);
 
 console.log('Array from file:', array);

@@ -3,10 +3,12 @@
 const fs = require('fs');
 const path = require('path');
 
+const pathname = path.join(__dirname, 'array.json');
+
 const array = [1, 2, 3, 4, 5];
 
 const arrayString = JSON.stringify(array);
 
-fs.writeFileSync(path.join(__dirname, 'array.json'), arrayString);
+fs.writeFileSync(pathname, arrayString);
 
 console.log('File saved.');

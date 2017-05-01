@@ -4,9 +4,10 @@ const path = require('path');
 const _ = require('underscore');
 
 const pathname = path.join(__dirname, 'array.json');
+const encoding = 'utf-8';
 
 // Read array from file
-let arrayString = fs.readFileSync(pathname, 'utf-8');
+let arrayString = fs.readFileSync(pathname, encoding);
 const array = JSON.parse(arrayString);
 
 // Use Underscore to shuffle the array
