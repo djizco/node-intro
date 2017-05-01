@@ -4,7 +4,9 @@ const path = require('path');
 
 const port = process.env.PORT || 3000;
 const hostname = '127.0.0.1';
+
 const pathname = path.join(__dirname, 'favorites.json');
+const encoding = 'utf-8';
 
 const server = http.createServer((request, response) => {
   response.writeHead(200, { 'Content-Type': 'application/json' });

@@ -5,6 +5,9 @@ const fs = require('fs');
 const http = require('http');
 const path = require('path');
 
+const pathname = path.join(__dirname, 'favorites.json');
+const encoding = 'utf-8';
+
 const port = process.env.PORT || 3000;
 const host = '127.0.0.1';
 
