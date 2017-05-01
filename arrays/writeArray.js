@@ -8,6 +8,3 @@ const pathname = path.join(__dirname, 'array.json');
 const array = [1, 2, 3, 4, 5];
 
 // Your code here
-fs.writeFileSync(pathname, JSON.stringify(array));
-
-console.log('File saved');

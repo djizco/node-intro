@@ -2,5 +2,6 @@
 const fs = require('fs');
 const path = require('path');
 const pathname = path.join(__dirname, 'array.json');
+const enconding = 'utf-8';
 
 // Your code here
