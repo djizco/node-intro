@@ -1,8 +1,10 @@
 # Intro to Server-Side JavaScript
 
-## The File System
+## The First Program
 
 Exercise 1: hello/hello.js
+
+## The File System
 
 Exercise 2: arrays/writeArray.js
 
