@@ -11,14 +11,15 @@ const encoding = 'utf-8';
 const server = http.createServer((request, response) => {
   response.writeHead(200, { 'Content-Type': 'application/json' });
 
-  // GET method returns the list of favorites
+  // GET method returns the current list of favorites
   if (request.method === 'GET') {
     // Your code here
 
-    response.end(JSON.stringify({ message: 'Get successful', favorites }));
+    response.end(JSON.stringify({ message: 'GET successful', favorites }));
   }
 
   // POST method adds a favorite to the end of the list of favorites
+  // Returns the updated list of favorites
   if (request.method === 'POST') {
     let body = '';
     request.on('data', data => { body += data; });
@@ -32,23 +33,11 @@ const server = http.createServer((request, response) => {
   }
 
   // DELETE method deletes the last favorite from the list of favorites
+  // Returns the updated favorites and the deleted item
   if (request.method === 'DELETE') {
     // Your code here
 
-    response.end(JSON.stringify({ message: 'Delete successful', favorites, deleted }));
-  }
-
-  // PUT method updates favorite list with a new list
-  if (request.method === 'PUT') {
-    let body = '';
-    request.on('data', data => { body += data; });
-    request.on('end', () => {
-      request.body = JSON.parse(body);
-      // You now have access to request.body
-      // Your code here
-
-      response.end(JSON.stringify({ message: 'Update successful', favorites }));
-    });
+    response.end(JSON.stringify({ message: 'DELETE successful', favorites, deleted }));
   }
 });
 
